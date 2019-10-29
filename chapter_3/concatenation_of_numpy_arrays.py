@@ -56,6 +56,32 @@ print(x)
 print(y)
 print(pd.concat([x,y], ignore_index=True))
 
+print("Adding MultiIndex keys")
+print(x)
+print(y)
+print(pd.concat([x,y], keys=['x','y']))
+
+print("concatenation with joins")
+df5 = make_df('ABC', [1,2])
+df6 = make_df('BCD', [3,4])
+print(df5)
+print(df6)
+print(pd.concat([df5, df6]))
+
+print("inner joins")
+print(df5)
+print(df6)
+print(pd.concat([df5, df6], join='inner'))
+
+print("inner joins on columns")
+print(df5)
+print(df6)
+print(pd.concat([df5, df6], join_axes=[df5.columns]))
+
+print('append')
+print(df1)
+print(df2)
+print(df1.append(df2))
 
 
 
